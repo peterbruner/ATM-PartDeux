@@ -1,5 +1,7 @@
 package com.theironyard.novauc;
 
+import java.util.HashMap;
+
 /**
  * Created by peter on 2/9/17.
  */
@@ -8,13 +10,61 @@ public class User {
     String theUsersNameIs;
     String nameTest;
     Boolean peepsNames;
-    String option;
+    String peeps1;
+    HashMap<String, Double> peeps = new HashMap<>();
 
+//      HashMap<String, Double> peepsy = new HashMap();
+//       peeps.put("Peter",99.99);
+//        peeps.put("Abraham",88.88);
+
+
+    public HashMap<String, Double> getPeeps() {
+        return peeps;
+    }
+
+    public void setPeeps(HashMap<String, Double> peeps) {
+        this.peeps = peeps;
+    }
 
     public void askName() throws Exception {
         System.out.println("What is your name?");
         theUsersNameIs = ATM.scanner.nextLine();
         System.out.println("Welcome, " + theUsersNameIs);
+
+    }
+
+    public void nameTest() throws Exception {
+        System.out.println("made it to nameTest");
+        if (peepsNames == true) {
+            System.out.println("the name entered is truly true!");
+        }
+        else {
+            System.out.println("intruder!");
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+        /*
+
+
+
+
+
+
+    String option;
+
+
+
     }
 //    public void chooseName() throws Exception {
 //        System.out.println("What is your name?");

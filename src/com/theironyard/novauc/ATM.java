@@ -9,15 +9,55 @@ public class ATM {
     public static Scanner scanner2 = new Scanner(System.in);
     public static User users = new User();
 
+
     public static void main(String[] args) throws Exception {
-	// write your code here
+        // write your code here
 
         System.out.println("Let's get crazy");
 
+        //users.getPeeps().put("peter", 9.99);
 
 
         users.askName();
-        users.chooseOption();
+        users.nameTest();
+
+//        HashMap<String, Double> peeps = new HashMap();
+//       peeps.put("Peter",99.99);
+//        peeps.put("Abraham",88.88);
+
+
+        //Boolean peepsNames = peeps.containsKey(users.theUsersNameIs);
+
+
+
+        System.out.println("Boom-shaka-laka!");
+    }
+  }
+
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -35,17 +75,6 @@ public class ATM {
         System.out.println()
         //prints boolean peepsNames value, but exits through nameTest
         users.nameTest();
-
-
-//        String peepsNames = peeps.get(users.theUsersNameIs);
-//        System.out.println(peepsNames);
-
-        //users.matchYesNo();
-
-        //users.chooseOuterMostMenu();
-
-        */
-
-        System.out.println("Boom-shaka-laka!");
     }
 }
+*/
