@@ -5,32 +5,116 @@ package com.theironyard.novauc;
  */
 public class User {
 
-    String OldNew;
-    String OldNew2;
+    String theUsersNameIs;
+    String nameTest;
+    Boolean peepsNames;
+    String option;
 
-    public void chooseOldNew() throws Exception {
+
+    public void askName() throws Exception {
+        System.out.println("What is your name?");
+        theUsersNameIs = ATM.scanner.nextLine();
+        System.out.println("Welcome, " + theUsersNameIs);
+    }
+//    public void chooseName() throws Exception {
+//        System.out.println("What is your name?");
+//        name = ATM.scanner.nextLine();
+//        System.out.println("Welcome, " + name);
+//    }
+
+
+    public void nameTest() throws Exception {
+        //takes boolean value of peepsNames and run an if - hopefully a switch
+        System.out.println("Made it this far");
+        //exit's after this point
+        if (peepsNames == true) {
+            System.out.println("A genius must have written this");
+        }
+        else {
+            System.out.println("Not looking good! :) :) :)");
+        }
+
+    }
+
+    //public User() {}
+
+    public void chooseOption() throws Exception {
+        int loopdiloop = 1;
+        while(loopdiloop == 1) {
+            System.out.println("What would you like to do? [Check balance / Withdraw funds / Cancel my life]");
+            option = ATM.scanner.nextLine();
+            if (option.equalsIgnoreCase("Check balance")) {
+                System.out.println("Current balance: " + this.balance);
+            }
+
+            else if (option.equalsIgnoreCase("Withdraw funds")) {
+                System.out.println("How much?");
+                double moneyRequested = ATM.scanner2.nextDouble();
+                if (this.balance >= moneyRequested) {
+                    System.out.println("Printing " + moneyRequested);
+                    this.balance = this.balance - moneyRequested;
+                    System.out.println("Remaining balance: " + this.balance);
+                } else {
+                    System.out.println("Does not compute");
+                }
+            }
+
+            else if (option.equalsIgnoreCase("Cancel my life")) {
+                System.out.println("Good choice");
+                loopdiloop = 0;
+
+
+            } else {
+                throw new Exception("Invalid balance statement");
+            }
+        }
+
+    }
+}
+
+
+
+    /*
+    //MENUS
+        //Current
+        //New User
+        //New User Prompts
+        //Current user Prompts
+
+    String OuterMostMenu;
+    String OuterMostMenu2;
+    
+    //first level existing or new user?
+
+    public void chooseOuterMostMenu() throws Exception {
         int loopdiloop1 = 1;
         while (loopdiloop1 == 1) {
-            System.out.println("existing user or new user? [existing / new / exit]");
-            
-            
-            OldNew2 = ATM.scanner.nextLine();
-            if (OldNew2.equalsIgnoreCase("existing")) {
-                System.out.println("All up in the heezy!"); //+ this.balance);
-            }
+            System.out.println("existing user or new user? [Current User / New User]");
 
-            else if (OldNew2.equalsIgnoreCase("new")) {
+            OuterMostMenu2 = ATM.scanner.nextLine();
+            if (OuterMostMenu2.equalsIgnoreCase("Current User?")) {
+                System.out.println("All up in the heezy!");
+            }
+            else if (OuterMostMenu2.equalsIgnoreCase("New User?")) {
                 System.out.println("idk");
             }
-            else if (OldNew2.equalsIgnoreCase("exit")) {
+            else if (OuterMostMenu2.equalsIgnoreCase("Current User Options")) {
+                System.out.println("idk");
+            }
+            else if (OuterMostMenu2.equalsIgnoreCase("New User Prompts")) {
                 loopdiloop1 = 0;
             }
             else {
-                throw new Exception("Does not compute following the 'what is your name prompt'");
+                throw new Exception("Does not compute at first level");
             }
         }
     }
-            /*
+
+
+    //second level existing user true
+    //public void
+
+    /*
             switch () {
                 case
             })
@@ -41,7 +125,7 @@ public class User {
     //name_true - current user
     //name_false - not current user - "would you like to create an account?" yes/no
 
-    //current user - four OldNew2s
+    //current user - four OuterMostMenu2s
     //checkBalance;
     //manageFunds; //withdraw //transfer //add
     //manageProfile; //meh do it later!
@@ -54,7 +138,7 @@ public class User {
     //if create profile then profile
 
     //current user yes
-    String profile; //existing //new
+    String profile; //currentAccount //newAccount
     String withdraw;
     String cancel;
     double balance;
@@ -86,4 +170,4 @@ public class User {
 
 
 
-}
+

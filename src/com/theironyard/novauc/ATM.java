@@ -14,24 +14,37 @@ public class ATM {
 
         System.out.println("Let's get crazy");
 
-        users.chooseOldNew();
-        //user.chooseOption();
+
+
+        users.askName();
+        users.chooseOption();
+
+
 
         HashMap<String, Double> peeps = new HashMap();
-        peeps.put("George",99.99);
+        peeps.put("Peter",99.99);
         peeps.put("Abraham",88.88);
-        peeps.put("Herbert",77.77);
-        peeps.put("Barack",66.66);
-        peeps.put("Donald",55.55);
+        //peeps.put(pullname.fromsomwhere,pullcorresponding.balance)
 
         //probably something with a scanner
         //System.out.println("Want to see a balance?");
 
-        //box-unbox these amounts into usable ints, but then need to be able to turn them back into strings to be
-        //re-entered into the table
+        Boolean peepsNames = peeps.containsKey(users.theUsersNameIs);
+        //either a scanner here, or in the above switch to handle an input?
+        System.out.println(peepsNames);
+        System.out.println()
+        //prints boolean peepsNames value, but exits through nameTest
+        users.nameTest();
 
-        //Double peepsBalances = peeps.get("Herbert");
-        //System.out.println(peepsBalances);
+
+//        String peepsNames = peeps.get(users.theUsersNameIs);
+//        System.out.println(peepsNames);
+
+        //users.matchYesNo();
+
+        //users.chooseOuterMostMenu();
+
+        */
 
         System.out.println("Boom-shaka-laka!");
     }
