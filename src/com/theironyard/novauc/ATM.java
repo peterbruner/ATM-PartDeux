@@ -11,6 +11,8 @@ public class ATM {
 
     public static void main(String[] args) throws Exception {
 
+        //HashMap<String, Double> switchBoard = new HashMap<>();
+
         HashMap<String, User> switchBoard = new HashMap<>();
         switchBoard.put("Gmoney", new User("Washington", 55.55));
         switchBoard.put("Bfreezy", new User("Clinton", 77.77));
@@ -37,11 +39,11 @@ public class ATM {
 
         //trying to call a method that will take the user's input [name], check it against the hashmap,
         //and return a boolean value
-        User.informationBalance4();
+        //User.informationBalance4();
 
-        boolean informationBalance5 = switchBoard.containsKey("Gmoney");
-        User.enteredName();
-        System.out.println("Welcome +" enteredName);
+//        boolean informationBalance5 = switchBoard.containsKey("Gmoney");
+//        User.enteredName();
+//        System.out.println("Welcome +" enteredName);
 
 
 
