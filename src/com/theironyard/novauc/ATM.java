@@ -7,10 +7,6 @@ public class ATM {
 
     public static void main(String[] args) throws Exception {
        user.login();
-       user.menu();
-       user.addUser();
-
-
 
     }
 }

@@ -47,15 +47,19 @@ public class User {
                                     break;
                 case "check balance":
                                         //System.out.println("this is checkBalance");
-                                        //checkBalance();
+                                        checkBalance();
                                         break;
                 case "remove account":
                                         //System.out.println("this is removeAccount");
-                                        //removeAccount();
-                                        break;
+                                        if(removeAccount())  {
+                                            return;
+                                        } else {
+                                            break;
+                                        }
+
                 case "cancel":
                                 //System.out.println("this is cancel");
-                                //cancel();
+                                //cancel(); not needed with the return; statement
                                 return;
                                 //break;
                 default: System.out.println("Try again");
@@ -66,12 +70,13 @@ public class User {
 
     public void addUser() {
         //TODO: grab the person's name and remove the below print
+        System.out.println("User not found. Add a new user.");
         System.out.println("What is your first name?");
         name = input.nextLine().toUpperCase();
         System.out.println("Using digits only, how much money would you like to deposit?");
         deposit = input2.nextDouble();
         switchBoard.put(name, deposit);
-        System.out.println("Account created for " + name + " with " + deposit + " dollars");
+        System.out.println("Account created for " + name + " with $" + deposit + " dollars");
         menu();
     }
 
@@ -91,6 +96,25 @@ public class User {
                 System.out.println("You don't have that much");
             }
         }
+    }
+
+    public void checkBalance() {
+        System.out.println(switchBoard.get(name));
+    }
+
+    public boolean removeAccount() {
+        while (loopdiloop == 1) {
+            System.out.println("Are you sure? [yes/no]");
+            if (input.nextLine().equalsIgnoreCase("yes")) {
+                switchBoard.remove(name);
+                return true;
+            }
+            else {
+                System.out.println("Cancelling");
+                return false;
+            }
+        }
+        return false;
     }
 
 
